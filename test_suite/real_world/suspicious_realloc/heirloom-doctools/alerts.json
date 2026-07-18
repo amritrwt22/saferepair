@@ -1,0 +1,667 @@
+[
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "checknr\\checknr.c",
+    "line": 189,
+    "column": 9,
+    "message": "'stk' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "grap\\input.c",
+    "line": 529,
+    "column": 7,
+    "message": "'p' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "grap\\main.c",
+    "line": 177,
+    "column": 11,
+    "message": "'buf1' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "pic\\input.c",
+    "line": 548,
+    "column": 7,
+    "message": "'p' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "pic\\main.c",
+    "line": 220,
+    "column": 11,
+    "message": "'buf1' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "pic\\main.c",
+    "line": 237,
+    "column": 12,
+    "message": "'buf1' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "ptx\\ptx.c",
+    "line": 449,
+    "column": 13,
+    "message": "'line' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "refer\\refer7.c",
+    "line": 136,
+    "column": 12,
+    "message": "'wref' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "soelim\\soelim.c",
+    "line": 121,
+    "column": 14,
+    "message": "'fname' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "tbl\\tb.c",
+    "line": 72,
+    "column": 12,
+    "message": "'spvecs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "tbl\\tb.c",
+    "line": 124,
+    "column": 13,
+    "message": "'tpvecs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\libhnj\\hnjalloc.c",
+    "line": 84,
+    "column": 7,
+    "message": "'p' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n1.c",
+    "line": 244,
+    "column": 35,
+    "message": "'mfiles' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n1.c",
+    "line": 1776,
+    "column": 12,
+    "message": "'nextf' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n1.c",
+    "line": 1849,
+    "column": 10,
+    "message": "'np' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n1.c",
+    "line": 1945,
+    "column": 12,
+    "message": "'nextf' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n1.c",
+    "line": 2228,
+    "column": 10,
+    "message": "'tp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n1.c",
+    "line": 2305,
+    "column": 13,
+    "message": "'charout' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n2.c",
+    "line": 193,
+    "column": 10,
+    "message": "'olt' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 291,
+    "column": 15,
+    "message": "'blist' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 1171,
+    "column": 19,
+    "message": "'savnxf->argt' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 1183,
+    "column": 22,
+    "message": "'savnxf->argsp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 1198,
+    "column": 21,
+    "message": "'savnxf->argsp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 1206,
+    "column": 20,
+    "message": "'savnxf->argsp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 1804,
+    "column": 9,
+    "message": "'tp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 1911,
+    "column": 10,
+    "message": "'sp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 1981,
+    "column": 9,
+    "message": "'tp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 2285,
+    "column": 10,
+    "message": "'had' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 2329,
+    "column": 12,
+    "message": "'had' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 2359,
+    "column": 9,
+    "message": "'had' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n3.c",
+    "line": 2372,
+    "column": 9,
+    "message": "'had' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n5.c",
+    "line": 298,
+    "column": 13,
+    "message": "'hcode' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n5.c",
+    "line": 419,
+    "column": 12,
+    "message": "'lpfx' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n5.c",
+    "line": 973,
+    "column": 12,
+    "message": "'streams' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n5.c",
+    "line": 1225,
+    "column": 12,
+    "message": "'name' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n5.c",
+    "line": 1257,
+    "column": 17,
+    "message": "'evlist' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n5.c",
+    "line": 1261,
+    "column": 14,
+    "message": "'evp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n5.c",
+    "line": 1262,
+    "column": 16,
+    "message": "'evnames' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3189,
+    "column": 12,
+    "message": "'pgwordp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3190,
+    "column": 12,
+    "message": "'pgwordw' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3191,
+    "column": 12,
+    "message": "'pghyphw' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3192,
+    "column": 12,
+    "message": "'pgadspc' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3193,
+    "column": 12,
+    "message": "'pglsphc' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3194,
+    "column": 10,
+    "message": "'pgopt' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3195,
+    "column": 12,
+    "message": "'pgspacp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3196,
+    "column": 12,
+    "message": "'pgspacw' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3197,
+    "column": 11,
+    "message": "'pglgsc' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3198,
+    "column": 11,
+    "message": "'pglgec' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3199,
+    "column": 11,
+    "message": "'pglgsw' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3200,
+    "column": 11,
+    "message": "'pglgew' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3201,
+    "column": 11,
+    "message": "'pglgsh' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3202,
+    "column": 11,
+    "message": "'pglgeh' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3203,
+    "column": 9,
+    "message": "'pgin' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3204,
+    "column": 9,
+    "message": "'pgll' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3205,
+    "column": 11,
+    "message": "'pgwdin' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3206,
+    "column": 11,
+    "message": "'pgwdll' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3207,
+    "column": 12,
+    "message": "'pgflags' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3208,
+    "column": 10,
+    "message": "'pglno' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3209,
+    "column": 12,
+    "message": "'pgpenal' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3279,
+    "column": 12,
+    "message": "'parsp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n7.c",
+    "line": 3385,
+    "column": 11,
+    "message": "'para' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n8.c",
+    "line": 540,
+    "column": 13,
+    "message": "'hylang' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 756,
+    "column": 12,
+    "message": "'inlevp' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1117,
+    "column": 10,
+    "message": "'buf' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1292,
+    "column": 13,
+    "message": "'widcache' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1294,
+    "column": 10,
+    "message": "'trtab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1295,
+    "column": 12,
+    "message": "'trnttab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1298,
+    "column": 12,
+    "message": "'trintab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1300,
+    "column": 11,
+    "message": "'gchtab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1302,
+    "column": 12,
+    "message": "'chartab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\n9.c",
+    "line": 1305,
+    "column": 13,
+    "message": "'fchartab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\dpost.d\\dpost.c",
+    "line": 1739,
+    "column": 10,
+    "message": "'buf' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\dpost.d\\dpost.c",
+    "line": 1985,
+    "column": 13,
+    "message": "'afmfonts' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\dpost.d\\dpost.c",
+    "line": 2231,
+    "column": 32,
+    "message": "'devfontmap' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\dpost.d\\dpost.c",
+    "line": 4474,
+    "column": 10,
+    "message": "'ustr' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\dpost.d\\dpost.c",
+    "line": 4556,
+    "column": 14,
+    "message": "'Bookmarks' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\makedev.c",
+    "line": 258,
+    "column": 11,
+    "message": "'cpout' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\otf.c",
+    "line": 2074,
+    "column": 15,
+    "message": "'a->unitab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\otf.c",
+    "line": 2882,
+    "column": 11,
+    "message": "'g2' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\otf.c",
+    "line": 2883,
+    "column": 11,
+    "message": "'v2' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\otf.c",
+    "line": 3042,
+    "column": 16,
+    "message": "'a->features' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\otf.c",
+    "line": 3057,
+    "column": 14,
+    "message": "'fp->pairs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 144,
+    "column": 13,
+    "message": "'fontbase' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 146,
+    "column": 11,
+    "message": "'fontab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 148,
+    "column": 12,
+    "message": "'kerntab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 150,
+    "column": 12,
+    "message": "'codetab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 152,
+    "column": 10,
+    "message": "'fitab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 156,
+    "column": 10,
+    "message": "'cstab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 158,
+    "column": 11,
+    "message": "'ccstab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 162,
+    "column": 13,
+    "message": "'tracktab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 164,
+    "column": 16,
+    "message": "'fallbacktab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t10.c",
+    "line": 166,
+    "column": 12,
+    "message": "'zoomtab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t6.c",
+    "line": 2138,
+    "column": 16,
+    "message": "'afmtab' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t6.c",
+    "line": 2250,
+    "column": 8,
+    "message": "'fb' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "troff\\troff.d\\t6.c",
+    "line": 2912,
+    "column": 10,
+    "message": "'np' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  }
+]

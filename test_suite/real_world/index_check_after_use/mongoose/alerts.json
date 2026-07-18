@@ -1,0 +1,93 @@
+[
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-builtin-wifi\\wifi\\wifidriver\\mlan_join.c",
+    "line": 154,
+    "column": 0,
+    "message": "V781: 'rate2[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-builtin-wifi\\wifi\\wifidriver\\mlan_join.c",
+    "line": 156,
+    "column": 0,
+    "message": "V781: 'tmp[j]' used before 'j' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-builtin-wifi\\wifi\\wifidriver\\wpa_supp_if\\rtos_wpa_supp_if.c",
+    "line": 648,
+    "column": 0,
+    "message": "V781: 'freqs[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-builtin-wifi\\wifi\\wifidriver\\wpa_supp_if\\rtos_wpa_supp_if.c",
+    "line": 816,
+    "column": 0,
+    "message": "V781: 'freqs[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip\\wifi\\wifidriver\\mlan_api.c",
+    "line": 5414,
+    "column": 0,
+    "message": "V781: 'prate[k]' used before 'k' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip\\wifi\\wifidriver\\mlan_join.c",
+    "line": 154,
+    "column": 0,
+    "message": "V781: 'rate2[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip\\wifi\\wifidriver\\mlan_join.c",
+    "line": 156,
+    "column": 0,
+    "message": "V781: 'tmp[j]' used before 'j' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip\\wifi\\wifidriver\\wpa_supp_if\\rtos_wpa_supp_if.c",
+    "line": 721,
+    "column": 0,
+    "message": "V781: 'freqs[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip\\wifi\\wifidriver\\wpa_supp_if\\rtos_wpa_supp_if.c",
+    "line": 889,
+    "column": 0,
+    "message": "V781: 'freqs[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip-wifi\\wifi\\wifidriver\\mlan_join.c",
+    "line": 154,
+    "column": 0,
+    "message": "V781: 'rate2[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip-wifi\\wifi\\wifidriver\\mlan_join.c",
+    "line": 156,
+    "column": 0,
+    "message": "V781: 'tmp[j]' used before 'j' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip-wifi\\wifi\\wifidriver\\wpa_supp_if\\rtos_wpa_supp_if.c",
+    "line": 648,
+    "column": 0,
+    "message": "V781: 'freqs[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "tutorials\\nxp\\frdm-rw612-xpresso-freertos-lwip-wifi\\wifi\\wifidriver\\wpa_supp_if\\rtos_wpa_supp_if.c",
+    "line": 816,
+    "column": 0,
+    "message": "V781: 'freqs[i]' used before 'i' bound check in for condition -- swap && operands"
+  }
+]

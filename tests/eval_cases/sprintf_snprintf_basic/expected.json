@@ -1,0 +1,5 @@
+{
+  "success": 1,
+  "skipped": 0,
+  "description": "Basic sprintf/snprintf: sprintf used on a fixed-size buffer without bounds check."
+}

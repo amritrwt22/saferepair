@@ -1,0 +1,338 @@
+[
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\boxes.c",
+    "line": 49,
+    "column": 17,
+    "message": "'parent->child' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\boxes.c",
+    "line": 490,
+    "column": 7,
+    "message": "'y' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\boxes.c",
+    "line": 491,
+    "column": 8,
+    "message": "'yc' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\drawbox.c",
+    "line": 86,
+    "column": 15,
+    "message": "'buffer' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\drawbox.c",
+    "line": 99,
+    "column": 14,
+    "message": "'buffer' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\drawbox.c",
+    "line": 105,
+    "column": 8,
+    "message": "'out' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 88,
+    "column": 8,
+    "message": "'line' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 106,
+    "column": 10,
+    "message": "'line' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 559,
+    "column": 13,
+    "message": "'T->args' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 642,
+    "column": 13,
+    "message": "'T->args' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 1052,
+    "column": 13,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 1092,
+    "column": 15,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 1107,
+    "column": 15,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 1201,
+    "column": 8,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2085,
+    "column": 12,
+    "message": "'string' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2124,
+    "column": 12,
+    "message": "'string' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2181,
+    "column": 11,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2201,
+    "column": 13,
+    "message": "'comb' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2216,
+    "column": 12,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2233,
+    "column": 13,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2264,
+    "column": 12,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2292,
+    "column": 11,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\lexer.c",
+    "line": 2303,
+    "column": 8,
+    "message": "'res' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\main.c",
+    "line": 186,
+    "column": 12,
+    "message": "'buffer' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 345,
+    "column": 18,
+    "message": "'posbox->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 379,
+    "column": 18,
+    "message": "'posbox->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 418,
+    "column": 18,
+    "message": "'posbox->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 472,
+    "column": 18,
+    "message": "'posbox->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1127,
+    "column": 8,
+    "message": "'ustr' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1180,
+    "column": 10,
+    "message": "'str' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1288,
+    "column": 16,
+    "message": "'sqrt->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1360,
+    "column": 20,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1376,
+    "column": 20,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1401,
+    "column": 19,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1430,
+    "column": 19,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1486,
+    "column": 20,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1502,
+    "column": 20,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1527,
+    "column": 19,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 1564,
+    "column": 19,
+    "message": "'integ->content' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 2095,
+    "column": 5,
+    "message": "'xy' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\parser.c",
+    "line": 2157,
+    "column": 5,
+    "message": "'xy' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\stringutils.c",
+    "line": 274,
+    "column": 9,
+    "message": "'out' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\stringutils.c",
+    "line": 438,
+    "column": 9,
+    "message": "'out' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\texprintf.c",
+    "line": 46,
+    "column": 7,
+    "message": "'str' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\texprintf.c",
+    "line": 102,
+    "column": 7,
+    "message": "'str' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\texprintf.c",
+    "line": 145,
+    "column": 7,
+    "message": "'str' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\texprintf.c",
+    "line": 190,
+    "column": 7,
+    "message": "'str' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\utf2unicode.c",
+    "line": 79,
+    "column": 12,
+    "message": "'buffer' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  }
+]

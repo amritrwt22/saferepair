@@ -1,0 +1,39 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude Code
+.claude/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Cloned external repos (re-clone with scripts/clone_repos.py or manually)
+scripts/repos/
+
+# SafeRepair CLI output (generated at runtime, not part of the project)
+output/
+
+# Test output
+tmp/
+.pytest_cache/
+
+paper_analysis.md
+redemption_comparison.md
+ai_detection_notes.md

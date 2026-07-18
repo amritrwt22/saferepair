@@ -1,0 +1,124 @@
+\chapter{Literature Review}
+\label{chap:literature_review}
+
+\section{Survey of Related Work}
+
+APR research splits into four main approaches. Search-based tools evolve candidate patches against a test suite; template-based tools apply hand-coded fix patterns whenever the code structure matches. Learning-based tools train neural models on corpora of historical fixes, while rule-based tools apply deterministic transformations driven by static analysis alerts. The literature here also includes foundational work on memory-safety exploitation, which establishes the threat context for C/C++ vulnerability repair. Nine works most relevant to SafeRepair are discussed below; Table~\ref{tab:lit_review} at the end of this chapter collects them for reference.
+
+Hu et al.~\cite{b1} built Vul4C, a benchmark of 144 C/C++ vulnerabilities across 23 products and 19 CWEs, then ran seven tools against it head-to-head. Human-patch match rates ranged from 2 to 18 percent. The paper also identified a recurring evaluation problem in learning-based tools: vulnerability tokens visible at training time that would not appear at deployment, inflating reported accuracy.
+
+Redemption~\cite{b2} by Svoboda et al.\ is the closest prior work to SafeRepair, covering CWE-476, CWE-457 and CWE-561 with rule-based deterministic repairs. On 9,234 alerts from a single codebase it hit 94.4\% repair or dismissal. The key difference from SafeRepair is how uncertain cases are handled. Redemption will patch a probable false positive if the cost seems low; SafeRepair skips unless the AST confirms the pattern.
+
+VulMaster~\cite{b3} addresses the context-window problem by processing the full function body, with AST structure encoding and CWE labels added on top. Zhou et al.\ trained it on 5,800 C/C++ functions and reached 20.3\% exact match, up from 10.2\% for the prior best. Four in five patches are still wrong. Fault localisation is also outside its scope.
+
+StaticFixer~\cite{b5} skips manual data curation entirely. Jain et al.\ use the static analyser to generate training pairs automatically, taking code the tool already flags and pairing it with a corrected version. On JavaScript information-flow bugs it outperforms CodeT5 and Codex, though the technique has not been applied beyond that scope.
+
+VulRepair~\cite{b4} fine-tunes a T5 encoder-decoder on 8,482 C/C++ vulnerability fixes from 1,754 projects. Exact match hit 44\%, though a later audit found data duplication in the train/test split. The model treats code as flat token sequences with no AST awareness; most patches are still wrong.
+
+TBar~\cite{b10} collected fix templates from across the APR literature and applied them to Java bugs in Defects4J. Under perfect fault localisation it fixed 74 bugs; automated localisation dropped that to 43. The fault localisation step is the bottleneck, not the patterns. The template library is also Java-only.
+
+Prophet~\cite{b11} trained a log-linear model on human patches to re-rank candidates from a generate-and-validate engine for C, filtering patches likely to overfit the test suite. It fixed 15 of 69 real-world bugs against 11 for the hand-coded baseline and 54 bugs went unrepaired. The model also can't construct logic absent from its training corpus.
+
+Szekeres et al.~\cite{b9} surveyed deployed memory-safety defences (ASLR, DEP, stack canaries, CFI) and showed no single mitigation stops all attack classes. Full spatial safety enforcement added roughly 67\% runtime overhead, which puts it out of reach for most production systems. Every mitigation in the survey was eventually routed around; that persistence is the reason source-level repair matters.
+
+GenProg~\cite{b8} applied genetic programming to C ASTs, scoring mutation candidates against a test suite and shrinking survivors with delta debugging. It fixed 55 of 105 real bugs at roughly eight dollars per repair, showing fully automated repair of production bugs was feasible. The catch is test-suite dependence: tests that trigger buffer overflows or null dereferences are rarely written for production codebases.
+
+{%
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\footnotesize
+\begin{longtable}{|>{\centering\arraybackslash}p{0.6cm}|>{\raggedright\arraybackslash}p{1.9cm}|p{2.5cm}|p{3.0cm}|p{3.0cm}|p{3.0cm}|}
+
+\caption{Summary of related works in automated program repair and memory safety.}
+\label{tab:lit_review} \\
+
+\hline
+\textbf{S.\,No} & \textbf{Paper} & \textbf{Authors} & \textbf{Techniques Used} & \textbf{Advancements} & \textbf{Drawbacks} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{S.\,No} & \textbf{Paper} & \textbf{Authors} & \textbf{Techniques Used} & \textbf{Advancements} & \textbf{Drawbacks} \\
+\hline
+\endhead
+
+\multicolumn{6}{r}{\textit{(Continued on next page\ldots)}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+1 &
+\textbf{SoK: Automated Vulnerability Repair} \newline \cite{b1} \newline (Hu et al., 2025) &
+Yiwei Hu et al. \newline (Huazhong Univ.\ of Science and Technology; Univ.\ of Colorado Colorado Springs) &
+Unified three-stage AVR taxonomy (vulnerability analysis, patch generation, patch validation); Vul4C benchmark: 144 C/C++ vulnerabilities across 23 products and 19 CWEs; head-to-head evaluation of 7 C/C++ AVR tools on a shared dataset &
+First unified C/C++ benchmark for cross-tool AVR comparison; reveals 2--18\% human-patch match rate across all evaluated tools; accepted at USENIX Security 2025 &
+Existing tools suffer prohibitive computational overhead; template-based generation fails on diverse vulnerability contexts; learning-based tools inflate accuracy via training-time vulnerability tokens unavailable at deployment \\
+\hline
+
+2 &
+\textbf{Redemption} \newline \cite{b2} \newline (Svoboda et al., 2025) &
+David Svoboda, Lori Flynn, William Klieber et al. \newline (CMU Software Engineering Institute) &
+Rule-based repair targeting three SA alert categories: null pointer (CWE-476), uninitialised values (CWE-457) and dead code (CWE-561); deterministic local edits validated against multiple SA tools including Cppcheck &
+Repaired or dismissed 94.4\% of 9,234 alerts for one SA tool on one codebase; $>$80\% average across two flaw categories and two codebases; no measurable runtime performance degradation &
+Limited to 3 alert categories and locally addressable defects; effectiveness varies across codebase and SA tool combinations; developer review still required to distinguish true from false positives \\
+\hline
+
+3 &
+\textbf{VulMaster} \newline \cite{b3} \newline (Zhou et al., 2024) &
+Xin Zhou, Kisub Kim, Bowen Xu, DongGyun Han, David Lo \newline (Singapore Management Univ.; Royal Holloway, Univ.\ of London) &
+Transformer model processing the entire vulnerable function without length truncation; AST-based code structure encoding combined with natural language semantics; CWE knowledge integration; trained on 5,800 C/C++ functions &
+Exact match improved from 10.2\% to 20.0\% over prior best; BLEU 21.3\%~$\to$~29.3\%; CodeBLEU 32.5\%~$\to$~40.9\%; outperforms VulRepair on all reported metrics &
+Only $\sim$20\% exact match; 4 in 5 generated patches are imperfect; requires accurate CWE labels; does not address vulnerability localisation; evaluation limited to C/C++ \\
+\hline
+
+4 &
+\textbf{StaticFixer} \newline \cite{b5} \newline (Jain et al., 2023) &
+Naman Jain et al. \newline (Microsoft Research India; Indian Institute of Science, Bengaluru) &
+Inverts the static analysis oracle to auto-generate paired (unsafe, safe) training data; domain-specific language for non-local repair strategies; strategy learning for information flow vulnerabilities in JavaScript &
+Outperforms CodeT5 and OpenAI Codex baselines on both target vulnerability types; eliminates need for manually curated repair datasets; handles non-local edits spanning multiple code locations &
+Scoped to JavaScript information flow vulnerabilities only; DSL and strategy learning not generalised to other languages or vulnerability classes; exact repair counts not precisely reported \\
+\hline
+
+5 &
+\textbf{VulRepair} \newline \cite{b4} \newline (Fu et al., 2022) &
+Michael Fu, Chakkrit Tantithamthavorn, Trung Le, Van Nguyen, Dinh Phung \newline (Monash Univ.) &
+Fine-tuned T5 encoder-decoder model; Byte Pair Encoding tokenisation to handle rare identifiers; pre-trained on CodeSearchNet; seq2seq repair framing on 8,482 C/C++ vulnerability fixes from 1,754 projects &
+44\% exact match, 13--21 percentage points above prior baselines; correctly repaired 745 of 1,706 real-world vulnerability instances across multiple CWE types &
+Data duplication issue subsequently identified in the train/test split; majority of generated patches remain incorrect; treats code as token sequences with no AST or CFG modelling; requires substantial GPU infrastructure \\
+\hline
+
+6 &
+\textbf{TBar} \newline \cite{b10} \newline (Liu et al., 2019) &
+Kui Liu, Anil Koyuncu, Dongsun Kim, Tegawend\'{e} Bissyand\'{e} \newline (Univ.\ of Luxembourg) &
+Systematic collection and labelling of fix patterns from prior APR literature; straightforward pattern-application engine for Java; evaluated on Defects4J under both perfect and automated fault localisation &
+Fixed 43 Defects4J bugs under practical fault localisation and 74 under perfect localisation (state-of-the-art at publication); showed systematic pattern application without ML outperforms more complex prior tools &
+Fix patterns hand-crafted for Java only; fault localisation bottleneck drops repairs from 74 to 43; cannot repair novel bug types not represented in the existing pattern library \\
+\hline
+
+7 &
+\textbf{Prophet} \newline \cite{b11} \newline (Long \& Rinard, 2016) &
+Fan Long, Martin Rinard \newline (MIT CSAIL) &
+Probabilistic log-linear model learned from a corpus of past human patches; re-ranks generate-and-validate candidates to filter overfitting patches; AST-level insert, replace and delete operations &
+Fixed 15 of 69 real-world C bugs versus 11 of 69 for the hand-coded heuristic baseline; first data-driven patch prioritisation to reduce test-suite overfitting in generate-and-validate APR &
+54 of 69 bugs remain unrepaired; requires a corpus of historical human patches for training; still limited by test-suite completeness; cannot synthesise novel repair logic \\
+\hline
+
+8 &
+\textbf{GenProg} \newline \cite{b8} \newline (Le~Goues et al., 2012) &
+Claire Le~Goues, ThanhVu Nguyen, Stephanie Forrest, Westley Weimer \newline (Univ.\ of Virginia; Univ.\ of New Mexico) &
+Genetic programming on C ASTs; mutation operators (delete, insert, replace statements); fitness scored against failing and passing test cases; delta debugging to minimise the final patch &
+Fixed 55 of 105 real bugs across 8 open-source C programs ($\sim$5M LOC) at $\sim$\$8 per repair; first demonstration that fully automated repair of real bugs is feasible without formal specifications &
+$\sim$98\% of plausible patches overfit the test suite; non-deterministic output; entirely dependent on test-suite completeness; patch space restricted to code already present in the program \\
+\hline
+
+9 &
+\textbf{SoK: Eternal War in Memory} \newline \cite{b9} \newline (Szekeres et al., 2013) &
+L\'{a}szl\'{o} Szekeres, Mathias Payer, Tao Wei, Dawn Song \newline (UC Berkeley; Peking Univ.) &
+Unified threat model classifying memory corruption by spatial and temporal safety violations; systematic survey of deployed defences (ASLR, DEP, stack canaries, CFI); runtime overhead analysis per defence class &
+Demonstrates no single deployed defence stops all attack classes; full spatial memory-safety enforcement incurs $\sim$67\% overhead; foundational taxonomy widely cited in subsequent vulnerability and APR research &
+Every deployed defence is bypassable under specific conditions; full memory safety is impractical for legacy C/C++ codebases; overhead measurements reflect 2013 hardware \\
+\hline
+
+\end{longtable}
+}

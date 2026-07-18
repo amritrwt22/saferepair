@@ -1,0 +1,51 @@
+[
+  {
+    "rule_id": "V781",
+    "file": "sqlite3.c",
+    "line": 35422,
+    "column": 0,
+    "message": "V781: 'z[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "sqlite3.c",
+    "line": 76178,
+    "column": 0,
+    "message": "V781: 'ixNx[k]' used before 'k' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "sqlite3.c",
+    "line": 76261,
+    "column": 0,
+    "message": "V781: 'ixNx[k]' used before 'k' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "sqlite3.c",
+    "line": 77371,
+    "column": 0,
+    "message": "V781: 'ixNx[k]' used before 'k' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "sqlite3.c",
+    "line": 150037,
+    "column": 0,
+    "message": "V781: 'aXRef[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "sqlite3.c",
+    "line": 213954,
+    "column": 0,
+    "message": "V781: 'z[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "sqlite3.c",
+    "line": 234678,
+    "column": 0,
+    "message": "V781: 'a[iOff]' used before 'iOff' bound check in while condition -- swap && operands"
+  }
+]

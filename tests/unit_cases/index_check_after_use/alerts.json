@@ -1,0 +1,16 @@
+[
+  {
+    "rule_id": "V781",
+    "file": "basic.c",
+    "line": 6,
+    "column": 5,
+    "message": "The 'i' variable is used as an index before it is checked against bounds"
+  },
+  {
+    "rule_id": "V781",
+    "file": "variant_for_loop.c",
+    "line": 4,
+    "column": 5,
+    "message": "The 'k' variable is used as an index before it is checked against bounds"
+  }
+]

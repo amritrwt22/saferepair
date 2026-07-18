@@ -1,0 +1,5 @@
+{
+  "success": 1,
+  "skipped": 0,
+  "description": "Basic index-check-after-use: array index used before bounds check in while condition."
+}

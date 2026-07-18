@@ -1,0 +1,202 @@
+\chapter{Methodology}
+\label{chap:methodology}
+
+\section{Design Philosophy}
+\label{sec:right_or_silent}
+
+Every SafeRepair handler does one of two things: it confirms the vulnerability structure in the AST and produces a fix, or it returns nothing and leaves the source file byte-for-byte unchanged. There is no third outcome. A handler that cannot verify its preconditions does not attempt a partial fix. This \textit{right-or-silent} principle is what produces a zero-false-positive guarantee by construction, not by empirical testing.
+
+The tool is conservative by design. Coverage yields to trustworthiness. A skipped alert is always safe. A wrong patch applied silently to a production codebase is not. In CI/CD pipelines, where patches land before any human review, that trade-off is the right one.
+
+Each handler is also deliberately minimal: it fixes exactly what local AST context confirms is wrong, nothing more. Error handling beyond the structural fix is application-specific and not something local context can determine, so overreaching would introduce new bugs. Each patch is auditable the way a hand-written fix would be. A developer reviewing the change can verify the transformation in under a minute. Each patch traces back to a named rule with its own correctness argument.
+
+\section{Pipeline Architecture}
+\label{sec:arch}
+
+The SafeRepair pipeline processes a JSON alert file against a source directory and writes patched files to an output directory. The implementation spans six Python modules: \texttt{alert\_parser.py}, \texttt{pattern\_detector.py}, \texttt{ast\_analyzer.py}, \texttt{pipeline.py}, \texttt{source\_rewriter.py} and \texttt{vali\-dator.py}. Figure~\ref{fig:pipeline_report} shows the full data flow.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+  box/.style={rectangle, draw=black, rounded corners=2pt,
+              fill=white, align=center, font=\footnotesize,
+              inner sep=5pt, minimum width=6cm, minimum height=0.65cm},
+  iobox/.style={rectangle, draw=black, fill=gray!12, rounded corners=2pt,
+                align=center, font=\footnotesize, inner sep=5pt,
+                minimum width=6cm, minimum height=0.6cm},
+  arr/.style={-{Stealth[length=7pt,width=5pt]}, thick},
+]
+\node[iobox] (inp) at (0, 0)
+  {\textbf{Input:} alerts JSON + source directory};
+
+\node[box] (parse) at (0, -1.6)
+  {\textbf{Alert Parser} \\ JSON $\to$ Alert objects (file, line, rule\_id)};
+
+\node[box] (classify) at (0, -3.2)
+  {\textbf{Pattern Classifier} \\ rule\_id $\to$ RepairPattern enum};
+
+\node[box] (ast) at (0, -4.8)
+  {\textbf{AST Parser (libclang)} \\ TranslationUnit per source file};
+
+\node[box] (dispatch) at (0, -6.4)
+  {\textbf{Handler Dispatcher} \\ analyze() $\to$ context dict;\enspace generate\_fix() $\to$ edits};
+
+\node[box] (rewrite) at (0, -8.0)
+  {\textbf{Source Rewriter} \\ applies line-level edits to in-memory buffer};
+
+\node[box] (gcc) at (0, -9.6)
+  {\textbf{GCC Validator} \\ \texttt{gcc -fsyntax-only} on patched file};
+
+\node[iobox] (out) at (0, -11.2)
+  {\textbf{Output:} PASS (patched .c written)\enspace/\enspace SKIP\enspace/\enspace FAIL};
+
+\draw[arr] (inp) -- (parse);
+\draw[arr] (parse) -- (classify);
+\draw[arr] (classify) -- (ast);
+\draw[arr] (ast) -- (dispatch);
+\draw[arr] (dispatch) -- (rewrite);
+\draw[arr] (rewrite) -- (gcc);
+\draw[arr] (gcc) -- (out);
+
+\end{tikzpicture}
+\caption{SafeRepair pipeline data flow.}
+\label{fig:pipeline_report}
+\end{figure}
+
+\subsection{Alert Ingestion}
+
+\texttt{alert\_parser.py} reads a JSON array where each element contains a \texttt{rule\_id}, a \texttt{line} number and either a \texttt{file} field (filename relative to the source directory) or a \texttt{file\_path} field (absolute or CWD-relative path). The parser drops alerts with missing required fields and logs a warning. It resolves relative filenames against the source directory and falls back to a recursive search within it, which handles repositories where files are nested in subdirectories. The parser returns all accepted alerts as \texttt{Alert} dataclass instances with a resolved absolute path.
+
+\texttt{pattern\_detector.py} maps each alert's \texttt{rule\_id} to a \texttt{RepairPattern} enum value. A single dictionary covers all rule names that different scanners use for the same underlying pattern; for example, \texttt{bugprone-suspicious-realloc-usage} (clang-tidy), \texttt{CWE-690} (custom scanner) and \texttt{clang-analyzer-unix.Malloc} (Clang static analyser) all map to their respective patterns. \texttt{pattern\_detector.py} drops any alert whose rule ID is absent from the dictionary. Those fall outside the tool's scope.
+
+\subsection{AST Parsing}
+
+\texttt{ast\_analyzer.py} uses the \texttt{libclang} Python bindings to parse each source file into a \texttt{Trans\-lation\-Unit}. One \texttt{Index} instance serves all parses within a pipeline run.
+
+Handlers rely on three traversal utilities:
+
+\begin{itemize}
+  \item \texttt{find\_call\_expr\_at\_line(tu, file, line, name)}: walks the AST depth-first and returns the first \texttt{CALL\_EXPR} cursor at the given line whose spelling matches the target function name. The realloc, malloc and sprintf handlers use this to confirm the flagged call exists in the AST and is not a comment or preprocessor directive.
+  \item \texttt{find\_enclosing\_function}\allowbreak\texttt{(tu, file, line)}: locates the \texttt{FUNCTION\_DECL} node whose source extent covers the given line and returns its name and return type spelling. The MissingNullCheck handler uses this to pick the appropriate error return value.
+  \item \texttt{get\_line\_text(file, line)}: reads a single source line from disk for regex matching before AST confirmation.
+\end{itemize}
+
+\subsection{Handler Dispatch and Execution}
+
+\texttt{pipeline.py} groups classified alerts by source file. For each file, the pipeline parses the AST once and creates a \texttt{SourceRewriter} instance. The pipeline then iterates over that file's alerts. For each one, the matching handler's \texttt{analyze()} method is called. If it returns a context dictionary, \texttt{generate\_fix()} applies the transformation. If it returns \texttt{None}, the alert is marked \textbf{SKIP} and the rewriter is not touched. Parsing once per file keeps the cost fixed regardless of alert count.
+
+Each handler implements two methods from the \texttt{RepairHandler} base class:
+
+\begin{itemize}
+  \item \texttt{analyze(alert, tu)}: confirms the pattern via regex and AST, checks skip conditions, and builds a context dictionary for \texttt{generate\_fix}. Returns \texttt{None} on any failure.
+  \item \texttt{generate\_fix(alert, context, rewriter)}: constructs the replacement text from the context and calls \texttt{rewriter.replace\_line()} or \texttt{rewriter.}\allowbreak\texttt{insert\_after\_line()} to queue the edit. Returns a \texttt{RepairResult} with status SUCCESS or FAILED.
+\end{itemize}
+
+\subsection{Source Rewriting and GCC Validation}
+
+\texttt{source\_rewriter.py} maintains an in-memory copy of the file as a list of lines. Edits are queued and applied all at once at write time. This means multiple fixes to the same file do not shift each other's line numbers mid-run. The patched content is written to the output directory under the same relative subdirectory structure as the source.
+
+\texttt{validator.py} runs \texttt{gcc -fsyntax-only} on each patched file via Python's \texttt{subprocess} module with a 30-second timeout. A patch is marked \textbf{PASS} if the command exits with code 0 and \textbf{FAIL} otherwise. Each transformation is correct by construction, so GCC acts as an independent safety net rather than the primary check. A clean exit code is not a semantic correctness proof. Correctness for each handler is argued in Section~\ref{sec:handlers}.
+
+\section{Pattern Handlers}
+\label{sec:handlers}
+
+All four handlers share the same two-phase structure. \texttt{analyze()} first runs regex matching against source text, then confirms the result against the libclang AST. \texttt{generate\_fix()} builds the replacement using only what \texttt{analyze()} returned. Analysis is read-only and has no side effects. Fix generation touches the rewriter only after all preconditions pass.
+
+\subsection{Suspicious Realloc (CWE-401/690)}
+
+\textbf{Vulnerability.} Assigning \texttt{realloc}'s return value directly to its own first argument overwrites the original pointer with \texttt{NULL} on allocation failure. The allocation is not freed before the overwrite, so the previously allocated buffer is leaked. On the next use of that pointer the program either dereferences NULL or accesses freed memory.
+
+\textbf{Detection.} The bug is flagged by clang-tidy's \texttt{bugprone-suspicious-realloc-usage} check. The handler matches two regex patterns against the source line: one for plain identifier self-assignment (\texttt{p = realloc(p, size)}) and one for struct-member forms (\texttt{s->f =}\allowbreak\texttt{realloc(}\allowbreak\texttt{s->f, size)}). An optional cast such as \texttt{(char*)} is tolerated in both patterns. After regex confirmation the handler calls \texttt{find\_call\_expr\_at\_line} to verify that a \texttt{realloc} CALL\_EXPR node exists at the flagged line in the AST. If it does not, the alert is skipped. This protects against cases where a commented-out or macro-generated realloc fools the regex.
+
+\textbf{Fix.} The single assignment line is replaced with a block that routes the return value through a temporary pointer \texttt{\_sr\_tmp}:
+
+\begin{lstlisting}[caption={CWE-401/690 fix: suspicious realloc handler output}]
+/* Before */
+i->marks = realloc(i->marks, sizeof(mpc_state_t) * i->marks_slots);
+
+/* After */
+{
+  void *_sr_tmp = realloc(i->marks, sizeof(mpc_state_t) * i->marks_slots);
+  if (_sr_tmp != NULL) {
+    i->marks = _sr_tmp;
+  }
+  /* else: realloc failed, i->marks still valid */
+}
+\end{lstlisting}
+
+The fix is correct by the C standard: \texttt{realloc} leaves the original pointer unchanged when it returns \texttt{NULL}. On success, the temporary is assigned back, which is semantically identical to the original. On failure, the original pointer is intact. Any existing cast is preserved in the assignment back.
+
+\subsection{Missing Null Check (CWE-690)}
+
+\textbf{Vulnerability.} Dereferencing the return value of \texttt{malloc} without first checking for \texttt{NULL} causes a null pointer dereference on allocation failure. In hosted C environments, \texttt{malloc} returns \texttt{NULL} when the requested memory is unavailable; dereferencing that pointer is undefined behaviour.
+
+\textbf{Detection.} The bug is flagged by clang-tidy's \texttt{clang-analyzer-unix.Malloc} check and by the custom scanner's CWE-690 rule. The handler matches the source line against a regex for \texttt{malloc} assignments, then checks the three lines immediately following for any of six null-check forms (\texttt{if (p == NULL)}, \texttt{if (!p)}, \texttt{if (NULL == p)}, etc.). If a guard is already present, the alert is skipped to avoid inserting a duplicate. Next, \texttt{find\_enclosing\_function} is called to get the return type of the containing function. This determines what error value to use. If the return type cannot be determined, the alert is skipped.
+
+\textbf{Fix.} A guard block is inserted on the line immediately after the \texttt{malloc} call, with the return statement adapted to the enclosing function's declared return type:
+
+\begin{lstlisting}[caption={CWE-690 fix: null guard inserted after malloc}]
+/* Before */
+struct Graph *graph = malloc(sizeof(struct Graph));
+graph->numVertices = vertices;
+
+/* After */
+struct Graph *graph = malloc(sizeof(struct Graph));
+if (graph == NULL) { return NULL; }
+graph->numVertices = vertices;
+\end{lstlisting}
+
+The handler covers three return types: \texttt{return NULL} for pointer-returning functions, \texttt{return -1} for integer-returning ones, and a bare \texttt{return} for \texttt{void}. When the enclosing function falls outside these cases (a struct return by value, for example), the handler skips. That is why MISSING\_NULL has a higher skip rate than the other patterns.
+
+\subsection{Index Check After Use (CWE-125/787)}
+
+\textbf{Vulnerability.} A loop condition of the form \texttt{buf[j] \&\& j < N} evaluates the array access on the left operand of \texttt{\&\&} before the bounds check on the right. When \texttt{j} equals \texttt{N}, \texttt{buf[j]} is an out-of-bounds read or write that precedes the check that was meant to prevent it. This is the PVS-Studio V781 pattern.
+
+\textbf{Detection.} The custom libclang scanner flags conditions matching this structure. Starting from the flagged line, the handler reads up to ten consecutive source lines and joins them to handle multi-line conditions. The full condition string is then extracted between the matching parentheses. The joined condition is split at top-level \texttt{\&\&} operators (those not nested inside parentheses or brackets). For each adjacent operand pair, the handler checks whether the left contains an array subscript and the right contains a bound check on the same index variable. Two conditions cause a skip: the left operand contains \texttt{++} or \texttt{--} (swapping side-effect expressions would change loop behaviour), or the left already has a bound check on the same variable.
+
+\textbf{Fix.} The two \texttt{\&\&} operands are swapped so the bounds check executes first:
+
+\begin{lstlisting}[caption={CWE-125/787 fix: operand swap in loop condition}]
+/* Before */
+for (j = 0; p[j] && j < HUD_BUF_SIZE; j++) {
+
+/* After */
+for (j = 0; j < HUD_BUF_SIZE && p[j]; j++) {
+\end{lstlisting}
+
+\texttt{\&\&} is commutative for truth values, so the swap is semantically equivalent for side-effect-free expressions. Short-circuit evaluation is also preserved in the corrected direction. The replacement is applied to the joined string and re-split into the original line count at write time, covering both single-line and multi-line conditions.
+
+\subsection{Sprintf Unbounded (CWE-120)}
+
+\textbf{Vulnerability.} Calling \texttt{sprintf(buf, fmt, ...)} with a \texttt{\%s} format specifier and a runtime string argument can overflow \texttt{buf} if the formatted output exceeds the buffer's capacity. \texttt{sprintf} has no built-in mechanism to cap the bytes written, so any string-typed format argument is an unconditional overflow risk. \texttt{snprintf} takes a size argument and avoids this.
+
+\textbf{Detection.} The bug is flagged by a custom libclang AST scanner and also by clang-tidy's \texttt{clang-analyzer-security.insecureAPI.Deprecat\-edOrUnsafeBufferHandling} check. The handler reads the source line and skips immediately if \texttt{snprintf} is already present, avoiding double-processing. Otherwise a regex extracts the destination buffer name from the \texttt{sprintf(buf,}\allowbreak\texttt{ ...)} call. \texttt{find\_call\_expr\_at\_line} is then called to confirm a \texttt{sprintf} CALL\_EXPR node exists at that line in the AST.
+
+\textbf{Fix.} The call is rewritten in two steps: \texttt{sprintf} is replaced with \texttt{snprintf}, and \texttt{sizeof(buf)} is inserted as the second argument immediately after the destination buffer name:
+
+\begin{lstlisting}[caption={CWE-120 fix: sprintf replaced with snprintf}]
+/* Before */
+sprintf(keym, "%s:", s);
+
+/* After */
+snprintf(keym, sizeof(keym), "%s:", s);
+\end{lstlisting}
+
+For inputs that fit in the buffer, \texttt{snprintf} output is identical to \texttt{sprintf}. When the formatted string would overflow, \texttt{snprintf} truncates instead of writing past the end. Optional casts on the buffer argument are preserved. If the destination is a pointer rather than a stack array, the handler skips: \texttt{sizeof(ptr)} returns the pointer width, not the allocation size, so the fix would be wrong.
+
+\section{Skip Conditions and Boundaries}
+\label{sec:skip}
+
+The 43 skipped alerts fall into four structural categories, each marking a boundary of local AST inspection:
+
+\begin{enumerate}
+  \item \textbf{Macro-expanded lines.} When the flagged line comes from a macro expansion, the regex fails to match the unexpanded source text and the handler returns \texttt{None}. Fixing this would require resolving macro definitions through libclang's token-expansion API first.
+
+  \item \textbf{Interprocedural patterns.} Some alerts flag a usage site whose vulnerability can only be confirmed by tracing back through a function call boundary. Local AST inspection cannot cross that boundary, so the handler skips.
+
+  \item \textbf{Dynamically sized buffers.} The \texttt{snprintf} fix needs \texttt{sizeof(buf)} to be statically computable. When the destination is a pointer, \texttt{sizeof} returns the pointer width instead. The handler checks the AST cursor type for the buffer argument and skips if it is a pointer.
+
+  \item \textbf{Already-fixed patterns.} Some alerts point to locations already corrected by upstream developers or a prior run. The null-check lookahead and the \texttt{snprintf} presence check catch these and skip.
+\end{enumerate}
+
+The single FAIL in the evaluation occurred in \texttt{vim/vim} for the \texttt{INDEX\_CHECK} pattern: the loop condition spanned multiple lines with nested ternary operators, and the text-level operand search did not match across the indentation and newline variation.

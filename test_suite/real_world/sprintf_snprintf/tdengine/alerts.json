@@ -1,0 +1,331 @@
+[
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\TSZ\\sz\\src\\iniparser.c",
+    "line": 255,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\TSZ\\sz\\src\\iniparser.c",
+    "line": 290,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\TSZ\\sz\\src\\iniparser.c",
+    "line": 336,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\TSZ\\sz\\src\\iniparser.c",
+    "line": 728,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c\\asyncdemo.c",
+    "line": 109,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c\\asyncdemo.c",
+    "line": 112,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c\\asyncdemo.c",
+    "line": 115,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c\\asyncdemo.c",
+    "line": 123,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c\\asyncdemo.c",
+    "line": 143,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c\\asyncdemo.c",
+    "line": 167,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c\\asyncdemo.c",
+    "line": 224,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c-ws-new\\async_demo.c",
+    "line": 96,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c-ws-new\\async_demo.c",
+    "line": 99,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c-ws-new\\async_demo.c",
+    "line": 102,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c-ws-new\\async_demo.c",
+    "line": 110,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c-ws-new\\async_demo.c",
+    "line": 145,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c-ws-new\\async_demo.c",
+    "line": 176,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "docs\\examples\\c-ws-new\\async_demo.c",
+    "line": 229,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "examples\\c\\asyncdemo.c",
+    "line": 109,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "examples\\c\\asyncdemo.c",
+    "line": 112,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "examples\\c\\asyncdemo.c",
+    "line": 115,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "examples\\c\\asyncdemo.c",
+    "line": 123,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "examples\\c\\asyncdemo.c",
+    "line": 143,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "examples\\c\\asyncdemo.c",
+    "line": 167,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "examples\\c\\asyncdemo.c",
+    "line": 224,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\demoapi.c",
+    "line": 93,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\demoapi.c",
+    "line": 113,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\demoapi.c",
+    "line": 132,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\demoapi.c",
+    "line": 161,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\demoapi.c",
+    "line": 318,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\stopquery.c",
+    "line": 415,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\stopquery.c",
+    "line": 418,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\stopquery.c",
+    "line": 442,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\stopquery.c",
+    "line": 445,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\whiteListTest.c",
+    "line": 147,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\whiteListTest.c",
+    "line": 158,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "test\\new_test_framework\\script\\api\\whiteListTest.c",
+    "line": 176,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\blob_test.c",
+    "line": 297,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\sml_test.c",
+    "line": 1631,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\tmqDemo.c",
+    "line": 212,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\tmqDemo.c",
+    "line": 253,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\tmqDemo.c",
+    "line": 261,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\tmqDemo.c",
+    "line": 309,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\tmqDemo.c",
+    "line": 436,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\tmqDemo.c",
+    "line": 502,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\tmq_vtable.c",
+    "line": 41,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "utils\\test\\c\\varbinary_test.c",
+    "line": 360,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  }
+]

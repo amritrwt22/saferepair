@@ -1,0 +1,254 @@
+[
+  {
+    "rule_id": "V781",
+    "file": "terps\\agility\\gamedata.c",
+    "line": 580,
+    "column": 0,
+    "message": "V781: 'dict[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\agility\\parser.c",
+    "line": 140,
+    "column": 0,
+    "message": "V781: 'input[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\agility\\parser.c",
+    "line": 152,
+    "column": 0,
+    "message": "V781: 'input_back[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\agility\\parser.c",
+    "line": 1019,
+    "column": 0,
+    "message": "V781: 'input[ip]' used before 'ip' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\agility\\parser.c",
+    "line": 1294,
+    "column": 0,
+    "message": "V781: 'input[np]' used before 'np' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\alan3\\instance.c",
+    "line": 835,
+    "column": 0,
+    "message": "V781: 'admin[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\alan3\\params.c",
+    "line": 197,
+    "column": 0,
+    "message": "V781: 'theArray[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\hugo\\heglk\\hecugel.c",
+    "line": 1538,
+    "column": 0,
+    "message": "V781: 'wins[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 1613,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 1736,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 1743,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 1748,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 1752,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 1900,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 2189,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 2221,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\interpreter.c",
+    "line": 2302,
+    "column": 0,
+    "message": "V781: 'word[counter]' used before 'counter' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 461,
+    "column": 0,
+    "message": "V781: 'word[index]' used before 'index' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 512,
+    "column": 0,
+    "message": "V781: 'word[index]' used before 'index' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 546,
+    "column": 0,
+    "message": "V781: 'word[index]' used before 'index' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 633,
+    "column": 0,
+    "message": "V781: 'word[index]' used before 'index' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 728,
+    "column": 0,
+    "message": "V781: 'word[wp]' used before 'wp' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 856,
+    "column": 0,
+    "message": "V781: 'word[index]' used before 'index' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 887,
+    "column": 0,
+    "message": "V781: 'word[index]' used before 'index' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 963,
+    "column": 0,
+    "message": "V781: 'word[wp]' used before 'wp' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\loader.c",
+    "line": 1121,
+    "column": 0,
+    "message": "V781: 'word[wp]' used before 'wp' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\jacl\\parser.c",
+    "line": 1919,
+    "column": 0,
+    "message": "V781: 'object[index]' used before 'index' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\plus\\parseinput.c",
+    "line": 281,
+    "column": 0,
+    "message": "V781: 'string[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\plus\\parseinput.c",
+    "line": 464,
+    "column": 0,
+    "message": "V781: 'TokenWords[WordIndex]' used before 'WordIndex' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\scott\\parser.c",
+    "line": 259,
+    "column": 0,
+    "message": "V781: 'first[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\scott\\parser.c",
+    "line": 262,
+    "column": 0,
+    "message": "V781: 'second[j]' used before 'j' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\scott\\parser.c",
+    "line": 266,
+    "column": 0,
+    "message": "V781: 'third[k]' used before 'k' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\scott\\parser.c",
+    "line": 583,
+    "column": 0,
+    "message": "V781: 'string[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\scott\\titleimage.c",
+    "line": 336,
+    "column": 0,
+    "message": "V781: 'title_screen[pos]' used before 'pos' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\tads\\tads2\\vocab.c",
+    "line": 5551,
+    "column": 0,
+    "message": "V781: 'inlist[lpos]' used before 'lpos' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "terps\\taylor\\parseinput.c",
+    "line": 62,
+    "column": 0,
+    "message": "V781: 'string[i]' used before 'i' bound check in for condition -- swap && operands"
+  }
+]

@@ -1,0 +1,13 @@
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+C software has a persistent memory-safety problem. Bugs like buffer overflows and null pointer dereferences show up routinely in production systems and have been exploited for decades. Static analysis tools can flag them reliably. Fixing them is still done by hand, though, and a developer working through a large backlog of alerts can take months to clear it.
+
+SafeRepair is a rule-based tool that automates the repair step. It parses the libclang AST to confirm the vulnerability at each flagged location, then writes a deterministic fix. GCC verifies the result before the file is saved. It targets four CWE patterns: suspicious realloc usage (CWE-401/690), missing null checks after malloc (CWE-690), index-before-bounds-check (CWE-125/787) and unbounded sprintf (CWE-120).
+
+SafeRepair ran on 372 alerts drawn from 15 open-source C projects spanning text editors, game engines, database engines and network daemons. On confirmed alerts, repair accuracy reached 99.7\% with no false positives. The tool needs no training data and output is deterministic. Both matter in CI/CD pipelines where patches land before any manual review.
+
+\vspace{0.8cm}
+
+\textbf{Keywords:} automated program repair, static analysis, memory safety, C programming, CWE
+

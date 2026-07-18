@@ -1,0 +1,23 @@
+[
+  {
+    "rule_id": "CWE-120",
+    "file": "src\\os_amiga.c",
+    "line": 550,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "src\\uninstall.c",
+    "line": 261,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "src\\uninstall.c",
+    "line": 364,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  }
+]

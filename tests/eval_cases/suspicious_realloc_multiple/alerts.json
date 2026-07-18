@@ -1,0 +1,16 @@
+[
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "test.c",
+    "line": 6,
+    "column": 5,
+    "message": "'realloc' is used on pointer 'a' which may leak on failure"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "test.c",
+    "line": 7,
+    "column": 5,
+    "message": "'realloc' is used on pointer 'b' which may leak on failure"
+  }
+]

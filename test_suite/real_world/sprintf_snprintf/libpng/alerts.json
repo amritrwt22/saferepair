@@ -1,0 +1,65 @@
+[
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng-win.c",
+    "line": 396,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng-win.c",
+    "line": 398,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng-x.c",
+    "line": 349,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng-x.c",
+    "line": 351,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng2-win.c",
+    "line": 544,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng2-win.c",
+    "line": 546,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng2-x.c",
+    "line": 568,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\gregbook\\rpng2-x.c",
+    "line": 570,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  },
+  {
+    "rule_id": "CWE-120",
+    "file": "contrib\\visupng\\VisualPng.c",
+    "line": 688,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  }
+]

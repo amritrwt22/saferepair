@@ -1,0 +1,5 @@
+{
+  "success": 1,
+  "skipped": 0,
+  "description": "Basic missing null check: malloc result used without checking for null."
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "rule_id": "V781",
+    "file": "test.c",
+    "line": 5,
+    "column": 11,
+    "message": "The value of 'i' index is checked after use. Perhaps there is a mistake in program logic. (V781)"
+  }
+]

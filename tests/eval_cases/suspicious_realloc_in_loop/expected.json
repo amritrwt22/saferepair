@@ -1,0 +1,5 @@
+{
+  "success": 0,
+  "skipped": 1,
+  "description": "Dereference pattern (*buf = realloc(*buf, ...)) not matched by regex — correctly skipped"
+}

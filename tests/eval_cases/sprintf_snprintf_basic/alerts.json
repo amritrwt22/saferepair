@@ -1,0 +1,9 @@
+[
+  {
+    "rule_id": "CWE-120",
+    "file": "test.c",
+    "line": 5,
+    "column": 5,
+    "message": "sprintf to fixed-size buffer without bounds check (CWE-120)"
+  }
+]

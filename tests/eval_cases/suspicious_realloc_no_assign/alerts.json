@@ -1,0 +1,9 @@
+[
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "test.c",
+    "line": 7,
+    "column": 5,
+    "message": "realloc call (already safe — uses temp pointer)"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "data\\rd_util.c",
+    "line": 38,
+    "column": 9,
+    "message": "'ptr' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "deps\\fluidlite\\src\\fluid_defsfont.c",
+    "line": 546,
+    "column": 40,
+    "message": "'sampledata_ogg' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\d_server.c",
+    "line": 397,
+    "column": 15,
+    "message": "'wadname' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "src\\d_server.c",
+    "line": 398,
+    "column": 15,
+    "message": "'wadget' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  }
+]

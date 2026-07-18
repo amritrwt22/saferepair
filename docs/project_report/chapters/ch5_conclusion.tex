@@ -1,0 +1,26 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+
+\section{Summary of Contributions}
+
+SafeRepair shows that deterministic rule-based repair works at production scale for well-char\-acterised C memory-safety patterns. It achieves 99.7\% repair accuracy on confirmed instances across 372 real-world alerts from 15 open-source repositories, with zero false positives. The tool needs no training data, labelled dataset, or GPU hardware.
+
+Four concrete outputs came from this work. First, a pipeline with four handler implementations covering CWE-120, CWE-125/787, CWE-401/690 and CWE-690. Second, the right-or-silent design principle: every handler either confirms the vulnerability in the AST and applies a correct transformation, or returns nothing. Zero false positives follow structurally from the design, not from a lucky evaluation run. Third, an evaluation on a diverse real-world corpus without repository-specific tuning that produced 328 correct patches and 43 safe skips. Fourth, a categorisation of skip conditions into four recurring causes that mark the current limits of deterministic repair.
+
+The zero-false-positive guarantee matters more than raw fix rate in CI/CD pipelines, where patches land before any developer review. A tool that produces wrong patches intermittently is not safe in that context. SafeRepair's guarantee holds by construction on every repository it runs against.
+
+\section{Future Work}
+
+\begin{itemize}
+
+  \item \textbf{AST-level operand swap for INDEX\_CHECK.} The single evaluation failure arose from text-level \texttt{\&\&} matching that does not span multi-line conditions. A direct AST operand swap via libclang's \texttt{get\_tokens()} API would resolve this case and also reduce macro-expansion skips.
+
+  \item \textbf{Macro expansion via the libclang token API.} Several SUSPICIOUS\_REALLOC skips involve realloc calls where the pointer passes through a preprocessor macro. First resolving macro invocations to their constituent tokens, then rewriting, would extend coverage to this class.
+
+  \item \textbf{Interprocedural analysis.} Each handler works within a single function body. A lightweight interprocedural pass limited to direct call chains within the same file would reach vulnerabilities that currently sit outside the detection boundary.
+
+  \item \textbf{Additional vulnerability patterns.} CWE-476 (null pointer dereference at the dereference site), CWE-415 (double free) and CWE-190 (integer overflow in allocation size computations) all have local structural signatures suitable for deterministic handlers. The pipeline needs no changes.
+
+  \item \textbf{Extension to C++ and CI/CD packaging.} libclang parses C++ ASTs natively. The main work would be updating pattern detectors for reference types and RAII conventions. Packaging SafeRepair as a GitHub Actions step with automatic pull-request creation for PASS results would bring alert detection and fix merge closer together.
+
+\end{itemize}

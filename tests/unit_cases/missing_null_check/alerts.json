@@ -1,0 +1,23 @@
+[
+  {
+    "rule_id": "CWE-690",
+    "file": "basic.c",
+    "line": 5,
+    "column": 5,
+    "message": "Value stored to 'buf' is the result of a malloc call and might be NULL"
+  },
+  {
+    "rule_id": "CWE-690",
+    "file": "variant_void_return.c",
+    "line": 5,
+    "column": 5,
+    "message": "Value stored to 'buf' is the result of a malloc call and might be NULL"
+  },
+  {
+    "rule_id": "CWE-690",
+    "file": "variant_int_return.c",
+    "line": 4,
+    "column": 5,
+    "message": "Value stored to 'buf' is the result of a malloc call and might be NULL"
+  }
+]

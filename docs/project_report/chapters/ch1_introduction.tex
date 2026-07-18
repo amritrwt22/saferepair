@@ -1,0 +1,35 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Background and Motivation}
+
+C has been the dominant systems programming language for decades. It gives programmers direct control over memory and execution at low cost, which is why it still underpins operating systems, embedded firmware, databases and network daemons. Direct memory access comes with a specific set of bugs, though. A mishandled realloc, a missing null check, an off-by-one in a loop condition: any of these can become an exploitable vulnerability. Buffer overflows and null pointer dereferences have been weaponised for code execution and privilege escalation across four decades of production software \cite{b9}.
+
+Szekeres et al.\ tracked how exploitation techniques evolved over two decades, finding that mitigations such as stack canaries, ASLR and DEP were each eventually worked around \cite{b9}. The defences slowed attackers down. They did not eliminate the underlying vulnerability class. C codebases written today still carry the same bugs.
+
+\section{Problem Statement}
+
+Tools like clang-tidy and custom libclang scanners can flag these patterns across large codebases at low false-positive rates. The detection side of the problem is largely solved. The repair side is not. Each alert still requires a human to read the flagged code and decide on a fix.
+
+Many of these fixes follow a fixed template. A suspicious realloc assignment always gets a temporary pointer; a missing null check gets a guard on the next line. On a project with dozens of such alerts, a developer ends up applying the same transformation over and over, slightly adjusted each time. The fixes are simple. The backlog is not, and known bugs sit unpatched for months as a result.
+
+\section{Existing Approaches and Limitations}
+
+The APR literature covers four broad approaches, each with different trade-offs for memory-safety repair.
+
+GenProg \cite{b8} is the canonical search-based tool. It mutates the program AST and scores each candidate patch against a test suite. For memory-safety bugs this creates a practical problem: production codebases rarely include tests that directly trigger a buffer overflow or null dereference, so there is little to score candidates against.
+
+TBar \cite{b10} takes a different approach. It encodes known fix patterns and applies them when the code structure matches, with no test suite needed. Prophet \cite{b11} sits between the two: it learns a probability model from historical human patches and uses that to rank candidates in a generate-and-validate loop for C programs.
+
+VulRepair \cite{b4} achieves 43.7\% exact-match repair on C/C++ vulnerabilities; VulMaster \cite{b3} reaches 20.3\% on a larger benchmark of 5,800 functions. Both handle a wide range of bug types without hand-coded rules. Both require GPU hardware and produce non-deterministic output. Neither provides a per-patch correctness guarantee.
+
+Redemption \cite{b2} is structurally the most similar to SafeRepair. It applies rule-based repairs to C/C++ alerts from CodeSonar and Clang, targeting null pointer and uninitialised-value defects, and achieves 94.4\% repair or dismissal on one analyser across one codebase and over 80\% on average across two codebases. Its null-check handler uses a fixed error-handling convention rather than inferring the return value from the enclosing function's type.
+
+\section{Proposed Solution: SafeRepair}
+
+SafeRepair is a rule-based automated program repair tool for C memory-safety alerts. It needs no training data, test suite, or GPU hardware. For each alert, the tool parses the flagged source file with libclang and checks the AST to confirm the vulnerability structure. The tool writes a fix only when that check passes. Each patch then goes through \texttt{gcc -fsyntax-only} before being saved to disk.
+
+It targets four CWE patterns: suspicious realloc usage (CWE-401/690), missing null checks after malloc (CWE-690), index-before-bounds-check in loop conditions (CWE-125/787) and unbounded sprintf with a string format specifier (CWE-120). In each case the correct fix sits entirely within local AST context, which is what makes deterministic repair feasible.
+
+Each handler operates on a \textit{right-or-silent} basis: it either confirms the pattern and produces a correct fix, or returns nothing and leaves the source file byte-for-byte unchanged. Zero false positives follow directly from this. SafeRepair ran on 372 real-world alerts across 15 open-source repositories (editors, databases, game engines, network daemons and a major language runtime). The tool reached 99.7\% repair accuracy on confirmed alerts and 88.2\% overall when skips count as non-repairs. Four structural skip conditions also emerged, marking the current scope limits of local text-based repair.
+

@@ -1,0 +1,9 @@
+[
+  {
+    "rule_id": "CWE-120",
+    "file": "tests\\profile\\statsd-stress.c",
+    "line": 83,
+    "column": 0,
+    "message": "sprintf to fixed-size buffer without bounds (CWE-120)"
+  }
+]

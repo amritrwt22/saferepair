@@ -1,0 +1,16 @@
+[
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "basic.c",
+    "line": 5,
+    "column": 5,
+    "message": "'p' used to store realloc result, original memory leaked on failure"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "variant_with_cast.c",
+    "line": 5,
+    "column": 5,
+    "message": "'buf' used to store realloc result, original memory leaked on failure"
+  }
+]

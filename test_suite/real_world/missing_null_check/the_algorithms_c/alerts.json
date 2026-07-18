@@ -1,0 +1,170 @@
+[
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "conversions\\octal_to_hexadecimal.c",
+    "line": 50,
+    "column": 5,
+    "message": "Potential memory leak"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "conversions\\octal_to_hexadecimal.c",
+    "line": 53,
+    "column": 5,
+    "message": "Potential memory leak"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\binary_trees\\red_black_tree.c",
+    "line": 23,
+    "column": 1,
+    "message": "Potential leak of memory pointed to by 'create'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\binary_trees\\threaded_binary_trees.c",
+    "line": 78,
+    "column": 17,
+    "message": "Potential leak of memory pointed to by 'new_node'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\binary_trees\\threaded_binary_trees.c",
+    "line": 302,
+    "column": 12,
+    "message": "Potential leak of memory pointed to by 'root'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\bellman_ford.c",
+    "line": 25,
+    "column": 31,
+    "message": "Potential leak of memory pointed to by 'G.edges'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\bfs.c",
+    "line": 116,
+    "column": 27,
+    "message": "Potential leak of memory pointed to by 'graph'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\bfs.c",
+    "line": 104,
+    "column": 1,
+    "message": "Potential leak of memory pointed to by 'q'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\dfs.c",
+    "line": 91,
+    "column": 27,
+    "message": "Potential leak of memory pointed to by 'graph'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\dijkstra.c",
+    "line": 17,
+    "column": 24,
+    "message": "Potential leak of memory pointed to by 'G.edges'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\floyd_warshall.c",
+    "line": 17,
+    "column": 24,
+    "message": "Potential leak of memory pointed to by 'G.edges'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\strongly_connected_components.c",
+    "line": 166,
+    "column": 27,
+    "message": "Potential leak of memory pointed to by 'graph'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\strongly_connected_components.c",
+    "line": 153,
+    "column": 1,
+    "message": "Potential leak of memory pointed to by 'graphT'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\topological_sort.c",
+    "line": 113,
+    "column": 27,
+    "message": "Potential leak of memory pointed to by 'graph'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\graphs\\topological_sort.c",
+    "line": 101,
+    "column": 1,
+    "message": "Potential leak of memory pointed to by 'stack'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\list\\main.c",
+    "line": 17,
+    "column": 28,
+    "message": "Potential leak of memory pointed to by 'str1'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\trie\\trie.c",
+    "line": 28,
+    "column": 13,
+    "message": "Potential leak of memory pointed to by 'root'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\vector.c",
+    "line": 149,
+    "column": 5,
+    "message": "Potential leak of memory pointed to by 'vec.contents'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "data_structures\\vector.c",
+    "line": 67,
+    "column": 21,
+    "message": "Potential leak of memory pointed to by 'vec.contents'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "misc\\rselect.c",
+    "line": 70,
+    "column": 16,
+    "message": "Potential leak of memory pointed to by 'a'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "numerical_methods\\qr_decomposition.c",
+    "line": 35,
+    "column": 20,
+    "message": "Potential leak of memory pointed to by 'A'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "numerical_methods\\qr_decomposition.c",
+    "line": 48,
+    "column": 9,
+    "message": "Potential leak of memory pointed to by 'Q'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "numerical_methods\\variance.c",
+    "line": 12,
+    "column": 20,
+    "message": "Potential leak of memory pointed to by 'ARRAY'"
+  },
+  {
+    "rule_id": "clang-analyzer-unix.Malloc",
+    "file": "process_scheduling_algorithms\\non_preemptive_priority_scheduling.c",
+    "line": 274,
+    "column": 11,
+    "message": "Potential leak of memory pointed to by 'ptr'"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "success": 0,
+  "skipped": 1,
+  "description": "Already uses temp pointer — no self-assignment, correctly skipped"
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 309,
+    "column": 16,
+    "message": "'i->marks' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 310,
+    "column": 16,
+    "message": "'i->lasts' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 334,
+    "column": 16,
+    "message": "'i->marks' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 335,
+    "column": 16,
+    "message": "'i->lasts' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 459,
+    "column": 17,
+    "message": "'i->buffer' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 1522,
+    "column": 13,
+    "message": "'p->name' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 1706,
+    "column": 12,
+    "message": "'buffer' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 1783,
+    "column": 12,
+    "message": "'buffer' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2371,
+    "column": 17,
+    "message": "'range' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2374,
+    "column": 17,
+    "message": "'range' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2384,
+    "column": 19,
+    "message": "'range' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2390,
+    "column": 19,
+    "message": "'range' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2399,
+    "column": 15,
+    "message": "'range' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2576,
+    "column": 13,
+    "message": "'y' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2585,
+    "column": 11,
+    "message": "'y' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2613,
+    "column": 13,
+    "message": "'y' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 2624,
+    "column": 11,
+    "message": "'y' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 3027,
+    "column": 17,
+    "message": "'r->children' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 3034,
+    "column": 12,
+    "message": "'a->tag' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 3043,
+    "column": 12,
+    "message": "'a->tag' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 3050,
+    "column": 12,
+    "message": "'a->tag' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 3522,
+    "column": 21,
+    "message": "'st->parsers' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 3547,
+    "column": 21,
+    "message": "'st->parsers' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4001,
+    "column": 23,
+    "message": "'p->data.or.xs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4014,
+    "column": 23,
+    "message": "'p->data.or.xs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4044,
+    "column": 24,
+    "message": "'p->data.and.xs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4045,
+    "column": 25,
+    "message": "'p->data.and.dxs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4062,
+    "column": 24,
+    "message": "'p->data.and.xs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4063,
+    "column": 25,
+    "message": "'p->data.and.dxs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4094,
+    "column": 24,
+    "message": "'p->data.and.xs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4095,
+    "column": 25,
+    "message": "'p->data.and.dxs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4112,
+    "column": 24,
+    "message": "'p->data.and.xs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  },
+  {
+    "rule_id": "bugprone-suspicious-realloc-usage",
+    "file": "mpc.c",
+    "line": 4113,
+    "column": 25,
+    "message": "'p->data.and.dxs' may be set to null if 'realloc' fails, which may result in a leak of the original buffer"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "success": 2,
+  "skipped": 0,
+  "description": "Two realloc self-assignment calls in one function, both should be fixed"
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "rule_id": "V781",
+    "file": "src\\diff.c",
+    "line": 389,
+    "column": 0,
+    "message": "V781: 'tp_diffbuf[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\diff.c",
+    "line": 509,
+    "column": 0,
+    "message": "V781: 'tp_diffbuf[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\diff.c",
+    "line": 3226,
+    "column": 0,
+    "message": "V781: 'tp_diffbuf[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\diff.c",
+    "line": 4142,
+    "column": 0,
+    "message": "V781: 'arg[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\diff.c",
+    "line": 4333,
+    "column": 0,
+    "message": "V781: 'tp_diffbuf[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\diff.c",
+    "line": 4461,
+    "column": 0,
+    "message": "V781: 'tp_diffbuf[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\dosinst.c",
+    "line": 2418,
+    "column": 0,
+    "message": "V781: 'argv[i]' used before 'i' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\ex_docmd.c",
+    "line": 9953,
+    "column": 0,
+    "message": "V781: 'src[off]' used before 'off' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\ex_getln.c",
+    "line": 4215,
+    "column": 0,
+    "message": "V781: 'cmdbuff[spos]' used before 'spos' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\gui_w32.c",
+    "line": 4251,
+    "column": 0,
+    "message": "V781: 'wp[i]' used before 'i' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\misc1.c",
+    "line": 256,
+    "column": 0,
+    "message": "V781: 'line[j]' used before 'j' bound check in for condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\normal.c",
+    "line": 1434,
+    "column": 0,
+    "message": "V781: 'ptr[col]' used before 'col' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\search.c",
+    "line": 2561,
+    "column": 0,
+    "message": "V781: 'linep[col]' used before 'col' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\search.c",
+    "line": 2574,
+    "column": 0,
+    "message": "V781: 'linep[col]' used before 'col' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\syntax.c",
+    "line": 1773,
+    "column": 0,
+    "message": "V781: 'line[current_col]' used before 'current_col' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\userfunc.c",
+    "line": 3700,
+    "column": 0,
+    "message": "V781: 'name[i]' used before 'i' bound check in for condition -- swap && operands"
+  }
+]

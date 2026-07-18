@@ -1,0 +1,44 @@
+[
+  {
+    "rule_id": "V781",
+    "file": "src\\database\\sqlite\\vendored\\sqlite3.c",
+    "line": 37196,
+    "column": 0,
+    "message": "V781: 'z[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\database\\sqlite\\vendored\\sqlite3.c",
+    "line": 156457,
+    "column": 0,
+    "message": "V781: 'aXRef[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\database\\sqlite\\vendored\\sqlite3.c",
+    "line": 224284,
+    "column": 0,
+    "message": "V781: 'z[i]' used before 'i' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\database\\sqlite\\vendored\\sqlite3.c",
+    "line": 246653,
+    "column": 0,
+    "message": "V781: 'a[iOff]' used before 'iOff' bound check in while condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\libnetdata\\facets\\facets.c",
+    "line": 90,
+    "column": 0,
+    "message": "V781: 'id_encoding_characters_reverse[t]' used before 't' bound check in if condition -- swap && operands"
+  },
+  {
+    "rule_id": "V781",
+    "file": "src\\web\\websocket\\websocket-handshake.c",
+    "line": 349,
+    "column": 0,
+    "message": "V781: 'api_key_str[i]' used before 'i' bound check in while condition -- swap && operands"
+  }
+]
